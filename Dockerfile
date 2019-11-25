@@ -8,7 +8,7 @@ RUN apt-get update && \
     libssl1.0-dev nmap libyaml-dev tmux dirmngr \
     dbus htop curl libmariadbclient-dev-compat \
     build-essential git gpg curl rsync ca-certificates \
-    dnsutils python-pip jq moreutils lsof sed
+    dnsutils python-pip jq moreutils lsof sed apt-transport-https software-properties-common
     
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -    && \
     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" && \
