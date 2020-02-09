@@ -12,7 +12,7 @@ RUN apt-get update && \
     build-essential git gpg curl rsync ca-certificates \
     dnsutils jq moreutils lsof sed \
     apt-transport-https software-properties-common \
-    libghc-yaml-dev && \
+    libghc-yaml-dev python3.7 && \
     update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1 && \
     update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 2 && \
     rm /usr/bin/python3 && \
