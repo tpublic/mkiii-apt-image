@@ -2,7 +2,7 @@ FROM docker.bluelight.limited:35000/ubuntu:18.04
 
 
 # # # Perform APT installs if needed
-RUN apt-get purge python
+# RUN apt-get purge python
 
 RUN apt-get update && \
     apt-get upgrade -y &&  \
