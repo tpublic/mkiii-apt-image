@@ -12,7 +12,11 @@ RUN apt-get update && \
     build-essential git gpg curl rsync ca-certificates \
     dnsutils jq moreutils lsof sed \
     apt-transport-https software-properties-common \
-    libghc-yaml-dev python3.7
+    libghc-yaml-dev && \
+    update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1 && \
+    update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 2 && \
+    rm /usr/bin/python3 && \
+    ln -s python3.7 /usr/bin/python3
     
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -    && \
     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" && \
