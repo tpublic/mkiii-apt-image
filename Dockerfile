@@ -8,7 +8,7 @@ RUN apt-get update && \
     libssl1.0-dev nmap libyaml-dev tmux dirmngr \
     dbus htop curl libmariadbclient-dev-compat \
     build-essential git gpg curl rsync ca-certificates \
-    dnsutils python-pip jq moreutils lsof sed \
+    dnsutils python3-pip jq moreutils lsof sed \
     apt-transport-https software-properties-common \
     libghc-yaml-dev
     
