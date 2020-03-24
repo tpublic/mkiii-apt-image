@@ -6,7 +6,7 @@ FROM ubuntu:18.04
 
 # RUN mkdir -p /etc/apt/apt.conf.d/ && echo 'Acquire::https::Proxy "https://nexus.bluelight.limited/repository/apt.facii/";' > /etc/apt/apt.conf.d/proxy.conf
 
-RUN http_proxy=https://nexus.bluelight.limited/repository/apt.facii/ apt-get update && \
+RUN cat /etc/apt/sources.list && http_proxy=https://nexus.bluelight.limited/repository/apt.facii/ apt-get update && \
     http_proxy=https://nexus.bluelight.limited/repository/apt.facii/ apt-get upgrade -y &&  \
     http_proxy=https://nexus.bluelight.limited/repository/apt.facii/ apt-get  install -y libssl1.0.0 openssl1.0 \
     libssl1.0-dev nmap libyaml-dev tmux dirmngr \
