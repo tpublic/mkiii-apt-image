@@ -4,6 +4,8 @@ FROM ubuntu:18.04
 # # # Perform APT installs if needed
 # RUN apt-get purge python
 
+RUN mkdir -p /etc/apt/apt.conf.d/ && echo 'Acquire::https::Proxy "https://nexus.bluelight.limited/repository/apt.facii/";' > /etc/apt/apt.conf.d/proxy.conf
+
 RUN apt-get update && \
     apt-get upgrade -y &&  \
     apt-get  install -y libssl1.0.0 openssl1.0 \
