@@ -1,4 +1,3 @@
-#FROM docker.bluelight.limited:35000/ubuntu:18.04
 FROM ubuntu:18.04
 
 
