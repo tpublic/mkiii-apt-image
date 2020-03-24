@@ -4,11 +4,11 @@ FROM ubuntu:18.04
 # # # Perform APT installs if needed
 # RUN apt-get purge python
 
-RUN mkdir -p /etc/apt/apt.conf.d/ && echo 'Acquire::https::Proxy "https://nexus.bluelight.limited/repository/apt.facii/";' > /etc/apt/apt.conf.d/proxy.conf
+# RUN mkdir -p /etc/apt/apt.conf.d/ && echo 'Acquire::https::Proxy "https://nexus.bluelight.limited/repository/apt.facii/";' > /etc/apt/apt.conf.d/proxy.conf
 
-RUN apt-get update && \
-    apt-get upgrade -y &&  \
-    apt-get  install -y libssl1.0.0 openssl1.0 \
+RUN https_proxy=https://nexus.bluelight.limited/repository/apt.facii/ apt-get update && \
+    https_proxy=https://nexus.bluelight.limited/repository/apt.facii/ apt-get upgrade -y &&  \
+    https_proxy=https://nexus.bluelight.limited/repository/apt.facii/ apt-get  install -y libssl1.0.0 openssl1.0 \
     libssl1.0-dev nmap libyaml-dev tmux dirmngr \
     dbus htop curl libmariadbclient-dev-compat \
     build-essential git gpg curl rsync ca-certificates \
@@ -18,8 +18,8 @@ RUN apt-get update && \
     
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -    && \
     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" && \
-    apt update && \
-    apt -y install docker-ce
+    https_proxy=https://nexus.bluelight.limited/repository/apt.facii/ apt update && \
+    https_proxy=https://nexus.bluelight.limited/repository/apt.facii/ apt -y install docker-ce
   
 RUN \
     update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1 && \
