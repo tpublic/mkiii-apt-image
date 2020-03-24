@@ -17,7 +17,7 @@ RUN https_proxy=https://nexus.bluelight.limited/repository/apt.facii/ apt-get up
     libghc-yaml-dev python3.7 python3-pip
     
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -    && \
-    add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" && \
+    add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic edge" && \
     https_proxy=https://nexus.bluelight.limited/repository/apt.facii/ apt update && \
     https_proxy=https://nexus.bluelight.limited/repository/apt.facii/ apt -y install docker-ce
   
