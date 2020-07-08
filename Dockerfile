@@ -3,6 +3,7 @@ FROM ubuntu:18.04
 
 # # # Perform APT installs if needed
 
+RUN whoami
 #RUN apt-get update && \
 #    apt-get upgrade -y &&  \
 #    apt-get  install -y libssl1.0.0 openssl1.0 \
@@ -13,12 +14,13 @@ FROM ubuntu:18.04
 #    apt-transport-https software-properties-common \
 #    libghc-yaml-dev python3.7 python3-pip
     
-
+RUN pwd
 #RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -    && \
 #    add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic edge" && \
 #    apt update && \
 #    apt -y install docker-ce
-  
+
+RUN ls -l
 #RUN \
 #    update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1 && \
 #    update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 2 && \
